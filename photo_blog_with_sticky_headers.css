@@ -1,0 +1,34 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+p.lede { font-size: 16px; line-height: 1.4; }
+.showcase .title { height: 50px; width: 980px; }
+.showcase .title .twitter { float: right; padding-top: 12px; }
+.showcase .title.fixed .pinned { position: fixed; z-index: 1000; top: 0; background: rgba(255,255,255,0.7); width: 980px;}
+.showcase p, .showcase li { font-size: 15px; line-height: 1.4; }
+.showcase ul { list-style-type: circle; margin-left: 0; }
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
