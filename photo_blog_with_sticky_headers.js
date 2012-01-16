@@ -9,7 +9,7 @@ $(document).ready(function () {
 			var top = slide.offset().top
 			var bottom = top + slide.outerHeight();
 			
-			if (scroll > top && scroll < (bottom - $(this).outerHeight()))
+			if (scroll > top && scroll < (top + $(this).siblings("img").outerHeight()))
 				$(this).addClass("fixed");
 			else $(this).removeClass("fixed");
 		});
