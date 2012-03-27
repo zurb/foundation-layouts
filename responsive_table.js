@@ -9,8 +9,13 @@ $(document).ready(function() {
       });
       return true;
     }
-    return false;
-  }
+    else if (switched && ($(window).width() > 767)) {
+      switched = false;
+      $("table.responsive").each(function(i, element) {
+        unsplitTable($(element));
+      });
+    }
+  };
    
   $(window).load(updateTables);
   $(window).bind("resize", updateTables);
@@ -26,6 +31,12 @@ $(document).ready(function() {
 		
 		original.closest(".table-wrapper").append(copy);
 		original.wrap("<div class='scrollable' />");
+	}
+	
+	function unsplitTable(original) {
+    original.closest(".table-wrapper").find(".responsive.pinned").remove();
+    original.unwrap();
+    original.unwrap();
 	}
 
 });
