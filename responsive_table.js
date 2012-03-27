@@ -1,10 +1,17 @@
-$(document).ready(function() {
-	
-	if ($(window).width() < 767) {
-		$("table.responsive").each(function(i, element) {
-			splitTable($(element));
-		});
-	}
+$(document).ready(function() {   
+   function splitCondition() {
+     return ($(window).width() < 767);
+   }
+   
+   var switched = false;
+   $(window).bind("resize", function(e) {
+     if (splitCondition() && !switched) {
+       $("table.responsive").each(function(i, element) {
+          splitTable($(element));
+          switched = true;
+        });
+     }
+   });
 	
 	function splitTable(original)
 	{
