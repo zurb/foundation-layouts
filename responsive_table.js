@@ -1,17 +1,20 @@
 $(document).ready(function() {   
-   function splitCondition() {
-     return ($(window).width() < 767);
-   }
+  var switched = false;
+  var updateTables = function() {
+    console.info("window width == ", $(window).width());
+    if (($(window).width() < 767) && !switched ){
+      switched = true;
+      $("table.responsive").each(function(i, element) {
+        splitTable($(element));
+      });
+      return true;
+    }
+    return false;
+  }
    
-   var switched = false;
-   $(window).bind("resize", function(e) {
-     if (splitCondition() && !switched) {
-       $("table.responsive").each(function(i, element) {
-          splitTable($(element));
-          switched = true;
-        });
-     }
-   });
+  $(window).load(updateTables);
+  $(window).bind("resize", updateTables);
+   
 	
 	function splitTable(original)
 	{
