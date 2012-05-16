@@ -1,7 +1,6 @@
-$(document).ready(function() {   
+$(document).ready(function() {
   var switched = false;
   var updateTables = function() {
-    console.info("window width == ", $(window).width());
     if (($(window).width() < 767) && !switched ){
       switched = true;
       $("table.responsive").each(function(i, element) {
@@ -27,14 +26,15 @@ $(document).ready(function() {
 		
 		var copy = original.clone();
 		copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-		copy.addClass("pinned");
+		copy.removeClass("responsive");
 		
 		original.closest(".table-wrapper").append(copy);
+		copy.wrap("<div class='pinned' />");
 		original.wrap("<div class='scrollable' />");
 	}
 	
 	function unsplitTable(original) {
-    original.closest(".table-wrapper").find(".responsive.pinned").remove();
+    original.closest(".table-wrapper").find(".pinned").remove();
     original.unwrap();
     original.unwrap();
 	}
